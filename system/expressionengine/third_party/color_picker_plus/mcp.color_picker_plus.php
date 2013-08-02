@@ -209,7 +209,7 @@ class Color_picker_plus_mcp {
 				$yChecked = $cpmgArr["$group_id"] == 'y' ? 'checked' : '';
 				$nChecked = $cpmgArr["$group_id"] != 'y' ? 'checked' : '';
 				$groupsList.= '<li class="ssdcpPrefs">' . $row['group_title'] . '</li>';
-				$groupsSettingList.= '<li class="ssdcpPrefs"><input type="radio" name="group_id_'.$row['group_id'].'" value="y" ' . $yChecked . '/>&nbsplYes&nbsp;&nbsp;&nbsp;<input type="radio" name="group_id_'.$row['group_id'].'" value="n" ' . $nChecked . '/>&nbsp;No</li>';
+				$groupsSettingList.= '<li class="ssdcpPrefs"><input type="radio" name="group_id_'.$row['group_id'].'" value="y" ' . $yChecked . '/>&nbsp;Yes&nbsp;&nbsp;&nbsp;<input type="radio" name="group_id_'.$row['group_id'].'" value="n" ' . $nChecked . '/>&nbsp;No</li>';
 			}
 		}
 		$groupsList.= '</ul>';
