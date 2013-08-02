@@ -31,6 +31,7 @@
 table.jPicker {
   background-color: #efefef;
   border: 1px outset #666;
+  border-radius: 3px;
   font-family: Arial, Helvetica, Sans-Serif;
   font-size: 12px !important;
   margin: 0px;
@@ -39,7 +40,7 @@ table.jPicker {
   z-index: 20;
 }
 .jPicker .Move {
-  background-color: #dddddd;
+  background-color: #ABB7C3;
   border-color: #fff #666 #666 #fff;
   border-style: solid;
   border-width: 1px;
@@ -134,6 +135,7 @@ table.jPicker {
   font-size: 9px;
   padding: 5px 0px 0px 0px;
   text-align: center;
+  height: 90px;
 }
 .jPicker .Preview div {
   border: 2px inset #eee;
@@ -166,11 +168,20 @@ table.jPicker {
   width: 115px;
 }
 .jPicker .Button input {
+  border-radius: 3px;
+  border-width: 1px;
   padding: 2px 0px;
   width: 100px;
 }
 .jPicker .Button .Ok {
   margin: 12px 0px 5px 0px;
+}
+.jPicker .Button .qcReset {
+  font-size: 9px;
+}
+.jPicker .Button .reset-copy {
+  font-size: 9px;
+  padding: 4px 0;
 }
 .jPicker td {
   margin: 0px;
@@ -191,7 +202,7 @@ table.jPicker {
   margin: 0px;
   padding: 0px;
   text-align: left;
-  width: 70px;
+  width: 50px;
 }
 .jPicker tr.Hex td.Text {
   width: 100px;
