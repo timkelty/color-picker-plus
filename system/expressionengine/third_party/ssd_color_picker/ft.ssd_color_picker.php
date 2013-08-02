@@ -1,14 +1,14 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /*
 ft.ssd_color_picker.php
-A color picker ExpressionEngine Field Type
+An advanced color picker ExpressionEngine FieldType
 */
 
 class Ssd_color_picker_ft extends EE_Fieldtype {
 
 	var $info = array(
-	    'name'    => 'SSD Color Picker',
-	    'version' => '0.99'
+	    'name'    => 'The Color Picker',
+	    'version' => '1.0'
 	);
 
 	/**

@@ -8,8 +8,8 @@ require_once PATH_THIRD.'ssd_color_picker/config.php';
 /**
  * SSD Color Picker Update Class for EE2
  *
- * @package   SSD Color Picker
- * @author    John Langer
+ * @package   The Color Picker
+ * @author    Shoe Shine Design & Development
  */
 class Ssd_color_picker_upd {
 

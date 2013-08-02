@@ -3,8 +3,8 @@
 /**
  * SSD Color Picker Module CP Class for EE2
  *
- * @package   SSD Color Picker
- * @author    John Langer
+ * @package   The Color Picker
+ * @author    Shoe Shine Design & Development
  */
 class Ssd_color_picker_mcp {
 

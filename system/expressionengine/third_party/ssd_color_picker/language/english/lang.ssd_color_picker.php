@@ -6,10 +6,10 @@ $lang = array(
 //  Module CP
 // -------------------------------------------
 
-'ssd_color_picker_module_name' => 'SSD Color Picker',
-'ssd_color_picker_module_description' => 'A color picker field type based on jPicker',
+'ssd_color_picker_module_name' => 'The Color Picker',
+'ssd_color_picker_module_description' => 'An advanced color picker fieldtype based on jPicker',
 
-'ssd_color_picker_no_module' => 'You haven’t installed SSD Color Picker’s module yet.',
+'ssd_color_picker_no_module' => 'You haven’t installed The Color Picker’s module yet.',
 
 // Pages
 'ssd_color_picker_settings' => 'Settings',
@@ -17,7 +17,7 @@ $lang = array(
 // Settings
 'ssd_color_picker_urlqc' => 'URL for updating Quick Color preferences',
 
-'ssd_color_picker_reset'      => 'Reset Quick Color Defaults to SSD Color Picker Defaults.',
+'ssd_color_picker_reset'      => 'Reset Quick Color Defaults to The Color Picker Defaults.',
 'ssd_color_picker_reset_btn'  =>'Reset to Default Colors',
 
 'ssd_color_picker_qc00'  => 'Default Quick Color 00',
