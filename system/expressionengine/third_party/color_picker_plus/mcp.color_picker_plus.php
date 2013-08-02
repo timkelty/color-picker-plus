@@ -82,7 +82,13 @@ class Color_picker_plus_mcp {
 			$this->EE->cp->set_breadcrumb(BASE.AMP.$this->base, $this->EE->lang->line('color_picker_plus_module_name'));
 		}
 
-		$this->EE->cp->set_variable('cp_page_title', $this->EE->lang->line($line));
+		// $this->EE->cp->set_variable('cp_page_title', $this->EE->lang->line($line));
+		// $this->EE->cp->set_variable was deprecated in 2.6
+        if (version_compare(APP_VER, '2.6', '>=')) {
+            ee()->view->cp_page_title = $this->EE->lang->line($line);
+        } else {
+            $this->EE->cp->set_variable('cp_page_title', $this->EE->lang->line($line));
+        }  
 	}
 
 	// --------------------------------------------------------------------
@@ -188,8 +194,8 @@ class Color_picker_plus_mcp {
 		}
 
 		// get list of Member Groups
-		$groupsList = '<ul>Member Group<br /><br />';
-		$groupsSettingList = '<ul>Can Save/Reset Quick Colors<br /><br />';
+		$groupsList = '<ul><strong>Member Group</strong><br /><br />';
+		$groupsSettingList = '<ul><strong>Can Group Save/Reset Quick Colors?</strong><br /><br />';
 		$sql = 'SELECT group_id, group_title FROM '.$this->EE->db->dbprefix.'member_groups';
 		$results = $this->EE->db->query($sql);
 		if ( $results->num_rows() > 0 ) {
@@ -203,7 +209,7 @@ class Color_picker_plus_mcp {
 				$yChecked = $cpmgArr["$group_id"] == 'y' ? 'checked' : '';
 				$nChecked = $cpmgArr["$group_id"] != 'y' ? 'checked' : '';
 				$groupsList.= '<li class="ssdcpPrefs">' . $row['group_title'] . '</li>';
-				$groupsSettingList.= '<li class="ssdcpPrefs"><input type="radio" name="group_id_'.$row['group_id'].'" value="y" ' . $yChecked . '/>Yes&nbsp;&nbsp;<input type="radio" name="group_id_'.$row['group_id'].'" value="n" ' . $nChecked . '/>No</li>';
+				$groupsSettingList.= '<li class="ssdcpPrefs"><input type="radio" name="group_id_'.$row['group_id'].'" value="y" ' . $yChecked . '/>&nbsplYes&nbsp;&nbsp;&nbsp;<input type="radio" name="group_id_'.$row['group_id'].'" value="n" ' . $nChecked . '/>&nbsp;No</li>';
 			}
 		}
 		$groupsList.= '</ul>';
