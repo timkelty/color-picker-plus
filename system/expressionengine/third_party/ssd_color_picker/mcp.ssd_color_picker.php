@@ -82,7 +82,12 @@ class Ssd_color_picker_mcp {
 			$this->EE->cp->set_breadcrumb(BASE.AMP.$this->base, $this->EE->lang->line('ssd_color_picker_module_name'));
 		}
 
-		$this->EE->cp->set_variable('cp_page_title', $this->EE->lang->line($line));
+		if (version_compare(APP_VER, '2.6', '>=')) {
+            ee()->view->cp_page_title = $this->EE->lang->line($line);
+        } else {
+            $this->EE->cp->set_variable('cp_page_title', $this->EE->lang->line($line));
+        } 
+		
 	}
 
 	// --------------------------------------------------------------------
