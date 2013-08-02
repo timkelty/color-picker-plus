@@ -1628,7 +1628,7 @@
 
 						// save to database table
 						result = $.get(
-							settings.updateurl + '&C=addons_modules&M=show_module_cp&module=ssd_color_picker&method=qcupdate&quickListDefault=' + defaultsToPass,							
+							settings.updateurl + '&C=addons_modules&M=show_module_cp&module=color_picker_plus&method=qcupdate&quickListDefault=' + defaultsToPass,							
 							function(data) {
 								alert("QuickColors reset to defaults.");
  							}
@@ -1649,7 +1649,7 @@
 					// save to preferences
 					quickPickId = $(this).attr('name');
 					settings.updateurl = settings.updateurl.replace("&amp;", "&");
-					result = $.get(settings.updateurl + '&C=addons_modules&M=show_module_cp&module=ssd_color_picker&method=qcupdate&row_id=' + quickPickId + '&quickcolor=' + hx + alpha);
+					result = $.get(settings.updateurl + '&C=addons_modules&M=show_module_cp&module=color_picker_plus&method=qcupdate&row_id=' + quickPickId + '&quickcolor=' + hx + alpha);
 					//change for all colorpickers on this page
 					$('span[name="' + quickPickId + '"]').attr('title', '#' + hx + alpha )
 						.attr('style', 'background-color:#' + hx );
@@ -2131,7 +2131,7 @@
         },
       images:
         {
-          clientPath: 'third_party/ssd_color_picker/images/', /* Path to image files */
+          clientPath: 'third_party/color_picker_plus/images/', /* Path to image files */
           colorMap:
           {
             width: 256,
@@ -2228,7 +2228,7 @@
             }
           }
         },
-	  updateurl : 'update_ssd_color_picker_preferences',
+	  updateurl : 'update_color_picker_plus_preferences',
 	  cansavechanges : 'n'
     };
 })(jQuery, '1.1.6');

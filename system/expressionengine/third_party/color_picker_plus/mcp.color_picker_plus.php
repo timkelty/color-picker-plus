@@ -1,12 +1,12 @@
 <?php if (! defined('BASEPATH')) exit('Invalid file request');
 
 /**
- * SSD Color Picker Module CP Class for EE2
+ * Color Picker Plus Module CP Class for EE2
  *
- * @package   The Color Picker
+ * @package   Color Picker Plus
  * @author    Shoe Shine Design & Development
  */
-class Ssd_color_picker_mcp {
+class Color_picker_plus_mcp {
 
 	/**
 	 * Constructor
@@ -17,11 +17,11 @@ class Ssd_color_picker_mcp {
 
 		if (REQ == 'CP')
 		{
-			$this->base = 'C=addons_modules'.AMP.'M=show_module_cp'.AMP.'module=ssd_color_picker';
+			$this->base = 'C=addons_modules'.AMP.'M=show_module_cp'.AMP.'module=color_picker_plus';
 
 			// Set the right nav
 			$this->EE->cp->set_right_nav(array(
-				'ssd_color_picker_settings' => BASE.AMP.$this->base.AMP.'method=index'
+				'color_picker_plus_settings' => BASE.AMP.$this->base.AMP.'method=index'
 			));
 		}
 	}
@@ -33,7 +33,7 @@ class Ssd_color_picker_mcp {
 	 */
 	function qcupdate()
 	{
-		$dbTableName = $this->EE->db->dbprefix . "ssd_color_picker";
+		$dbTableName = $this->EE->db->dbprefix . "color_picker_plus";
 		$query = $this->EE->db->query("SHOW TABLES LIKE '".$dbTableName."'");
 		if ($query->num_rows() > 0) {
 			// if row_id and quickcolor GET paramaters are set
@@ -75,19 +75,14 @@ class Ssd_color_picker_mcp {
 	/**
 	 * Set Page Title
 	 */
-	private function _set_page_title($line = 'ssd_color_picker_module_name')
+	private function _set_page_title($line = 'color_picker_plus_module_name')
 	{
-		if ($line != 'ssd_color_picker_module_name')
+		if ($line != 'color_picker_plus_module_name')
 		{
-			$this->EE->cp->set_breadcrumb(BASE.AMP.$this->base, $this->EE->lang->line('ssd_color_picker_module_name'));
+			$this->EE->cp->set_breadcrumb(BASE.AMP.$this->base, $this->EE->lang->line('color_picker_plus_module_name'));
 		}
 
-		if (version_compare(APP_VER, '2.6', '>=')) {
-            ee()->view->cp_page_title = $this->EE->lang->line($line);
-        } else {
-            $this->EE->cp->set_variable('cp_page_title', $this->EE->lang->line($line));
-        } 
-		
+		$this->EE->cp->set_variable('cp_page_title', $this->EE->lang->line($line));
 	}
 
 	// --------------------------------------------------------------------
@@ -101,88 +96,88 @@ class Ssd_color_picker_mcp {
 		$this->_set_page_title();
 		$vars['base'] = $this->base;
 		$defaults = array(
-			'qc00'      => 'ffaaffff',
-			'qc01'      => 'ff5656ff',
-			'qc02'      => 'ff0000ff',
-			'qc03'      => 'bf0000ff',
-			'qc04'      => '7f0000ff',
-			'qc05'      => 'ffffffff',
-			'qc06'      => 'ffd4aaff',
-			'qc07'      => 'ffaa56ff',
-			'qc08'      => 'ff7f00ff',
-			'qc09'      => 'bf5f00ff',
-			'qc10'      => '7f3f00ff',
-			'qc11'      => 'e5e5e5ff',
-			'qc12'      => 'ffffaaff',
-			'qc13'      => 'ffff56ff',
-			'qc14'      => 'ffff00ff',
-			'qc15'      => 'bfbf00ff',
-			'qc16'      => '7f7f00ff',
-			'qc17'      => 'ccccccff',
-			'qc18'      => 'd4ffaaff',
-			'qc19'      => 'aaff56ff',
-			'qc20'      => '7fff00ff',
-			'qc21'      => '5fbf00ff',
-			'qc22'      => '3f7f00ff',
-			'qc23'      => 'b2b2b2ff',
-			'qc24'      => 'aaffaaff',
-			'qc25'      => '56ff56ff',
-			'qc26'      => '00ff00ff',
-			'qc27'      => '00bf00ff',
-			'qc28'      => '007f00ff',
-			'qc29'      => '999999ff',
-			'qc30'      => 'aaffd4ff',
-			'qc31'      => '56ffaaff',
-			'qc32'      => '00ff7fff',
-			'qc33'      => '00bf5fff',
-			'qc34'      => '007f3fff',
-			'qc35'      => '7f7f7fff',
-			'qc36'      => 'aaffffff',
-			'qc37'      => '56ffffff',
-			'qc38'      => '00ffffff',
-			'qc39'      => '00bfbfff',
-			'qc40'      => '007f7fff',
-			'qc41'      => '666666ff',
-			'qc42'      => 'aad4ffff',
-			'qc43'      => '56aaffff',
-			'qc44'      => '007fffff',
-			'qc45'      => '005fbfff',
-			'qc46'      => '003f7fff',
-			'qc47'      => '4c4c4cff',
-			'qc48'      => 'aaaaffff',
-			'qc49'      => '5656ffff',
-			'qc50'      => '0000ffff',
-			'qc51'      => '0000bfff',
-			'qc52'      => '00007fff',
-			'qc53'      => '333333ff',
-			'qc54'      => 'd4aaffff',
-			'qc55'      => 'aa56ffff',
-			'qc56'      => '7f00ffff',
-			'qc57'      => '5f00bfff',
-			'qc58'      => '3f007fff',
-			'qc59'      => '191919ff',
-			'qc60'      => 'ffaaffff',
-			'qc61'      => 'ff56ffff',
-			'qc62'      => 'ff00ffff',
-			'qc63'      => 'bf00bfff',
-			'qc64'      => '7f007fff',
-			'qc65'      => '000000ff',
-			'qc66'      => 'ffaad4ff',
-			'qc67'      => 'ff56aaff',
-			'qc68'      => 'ff007fff',
-			'qc69'      => 'bf005fff',
-			'qc70'      => '7f003fff',
+			'qc00'      => 'ffaaaa',
+			'qc01'      => 'ff5656',
+			'qc02'      => 'ff0000',
+			'qc03'      => 'bf0000',
+			'qc04'      => '7f0000',
+			'qc05'      => 'ffffff',
+			'qc06'      => 'ffd4aa',
+			'qc07'      => 'ffaa56',
+			'qc08'      => 'ff7f00',
+			'qc09'      => 'bf5f00',
+			'qc10'      => '7f3f00',
+			'qc11'      => 'e5e5e5',
+			'qc12'      => 'ffffaa',
+			'qc13'      => 'ffff56',
+			'qc14'      => 'ffff00',
+			'qc15'      => 'bfbf00',
+			'qc16'      => '7f7f00',
+			'qc17'      => 'cccccc',
+			'qc18'      => 'd4ffaa',
+			'qc19'      => 'aaff56',
+			'qc20'      => '7fff00',
+			'qc21'      => '5fbf00',
+			'qc22'      => '3f7f00',
+			'qc23'      => 'b2b2b2',
+			'qc24'      => 'aaffaa',
+			'qc25'      => '56ff56',
+			'qc26'      => '00ff00',
+			'qc27'      => '00bf00',
+			'qc28'      => '007f00',
+			'qc29'      => '999999',
+			'qc30'      => 'aaffd4',
+			'qc31'      => '56ffaa',
+			'qc32'      => '00ff7f',
+			'qc33'      => '00bf5f',
+			'qc34'      => '007f3f',
+			'qc35'      => '7f7f7f',
+			'qc36'      => 'aaffff',
+			'qc37'      => '56ffff',
+			'qc38'      => '00ffff',
+			'qc39'      => '00bfbf',
+			'qc40'      => '007f7f',
+			'qc41'      => '666666',
+			'qc42'      => 'aad4ff',
+			'qc43'      => '56aaff',
+			'qc44'      => '007fff',
+			'qc45'      => '005fbf',
+			'qc46'      => '003f7f',
+			'qc47'      => '4c4c4c',
+			'qc48'      => 'aaaaff',
+			'qc49'      => '5656ff',
+			'qc50'      => '0000ff',
+			'qc51'      => '0000bf',
+			'qc52'      => '00007f',
+			'qc53'      => '333333',
+			'qc54'      => 'd4aaff',
+			'qc55'      => 'aa56ff',
+			'qc56'      => '7f00ff',
+			'qc57'      => '5f00bf',
+			'qc58'      => '3f007f',
+			'qc59'      => '191919',
+			'qc60'      => 'ffaaff',
+			'qc61'      => 'ff56ff',
+			'qc62'      => 'ff00ff',
+			'qc63'      => 'bf00bf',
+			'qc64'      => '7f007f',
+			'qc65'      => '000000',
+			'qc66'      => 'ffaad4',
+			'qc67'      => 'ff56aa',
+			'qc68'      => 'ff007f',
+			'qc69'      => 'bf005f',
+			'qc70'      => '7f003f',
 			'qc71'      => ''
 		);
 		$query = get_instance()->db->select('settings')
-			                       ->where('name', 'ssd_color_picker')
+			                       ->where('name', 'color_picker_plus')
 			                       ->get('fieldtypes');
 		$settings = unserialize(base64_decode($query->row('settings')));
 
-		$dbTableName = $this->EE->db->dbprefix . "ssd_color_picker";
+		$dbTableName = $this->EE->db->dbprefix . "color_picker_plus";
 		$groupsdbTableName = $dbTableName . "_member_groups";
 		
-		// get list of Member Groups that already have a row in exp_ssd_color_picker_member_groups
+		// get list of Member Groups that already have a row in exp_color_picker_plus_member_groups
 		$cpmgArr = array();
 		$cpmgSql = 'SELECT group_id, can_save_changes FROM '.$groupsdbTableName;
 		$cpmgResults = $this->EE->db->query($cpmgSql);
@@ -303,10 +298,10 @@ class Ssd_color_picker_mcp {
 
 		$data['settings'] = base64_encode(serialize($settings));
 
-		$this->EE->db->where('name', 'ssd_color_picker');
+		$this->EE->db->where('name', 'color_picker_plus');
 		$this->EE->db->update('fieldtypes', $data);
 
-		$dbTableName = $this->EE->db->dbprefix . "ssd_color_picker";
+		$dbTableName = $this->EE->db->dbprefix . "color_picker_plus";
 		$groupsdbTableName = $dbTableName . "_member_groups";
 
 		$sql = 'SELECT group_id FROM '.$this->EE->db->dbprefix.'member_groups';
