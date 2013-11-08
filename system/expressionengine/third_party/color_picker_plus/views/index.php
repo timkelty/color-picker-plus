@@ -12,11 +12,11 @@ $this->table->add_row(
 	lang('color_picker_plus_reset', 'resetqcs'),
 	'<span class="resetqcs button submit">'.lang('color_picker_plus_reset_btn').'</span>'
 );
-$this->cp->add_to_head('<script type="text/javascript">'.
-	'$(document).ready(function() {
+$this->cp->add_to_foot('<script type="text/javascript">'.
+	'$(document).ready(function() {	
 		$(".resetqcs").hover(function() {
 			$(this).css("cursor", "pointer");
-		});				
+		});			
 		$(".resetqcs").click(function() {
 			$(\'input[name="qc00"]\').val("ffaaaa");
 			$(\'input[name="qc01"]\').val("ff5656");
