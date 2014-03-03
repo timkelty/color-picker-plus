@@ -253,7 +253,7 @@ class Color_picker_plus_ft extends EE_Fieldtype {
 	{
 		$this->EE->cp->add_to_head('<link rel="stylesheet" media="screen" href="'.$this->EE->config->item('theme_folder_url').'third_party/color_picker_plus/css/jPicker-1.1.6.min.css" />');
 		$this->EE->cp->add_to_head('<link rel="stylesheet" media="screen" href="'.$this->EE->config->item('theme_folder_url').'third_party/color_picker_plus/css/jPicker.css" />');
-		$this->EE->cp->add_to_head('<script type="text/javascript" src="'.$this->EE->config->item('theme_folder_url').'javascript/compressed/jquery/jquery.js"></script>');
+		// $this->EE->cp->add_to_head('<script type="text/javascript" src="'.$this->EE->config->item('theme_folder_url').'javascript/compressed/jquery/jquery.js"></script>');
 		$this->EE->cp->add_to_head('<script type="text/javascript" src="'.$this->EE->config->item('theme_folder_url').'third_party/color_picker_plus/jpicker-1.1.6.min.js"></script>');
 //		$this->EE->cp->add_to_head('<script type="text/javascript" src="'.$this->EE->config->item('theme_folder_url').'third_party/color_picker_plus/jpicker-1.1.6.js"></script>');
 
